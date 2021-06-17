@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<mat-accordion>
+  <mat-expansion-panel hideToggle *ngFor="let order of orders">
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Order number: {{order.id}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Order value: {{order.totalPrice}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  <mat-list>
+    <mat-list-item *ngFor="let orderLine of order.orderLineDtos">
+      {{orderLine.productName}} |  ${{orderLine.price}}
+    </mat-list-item>
+    <div>
+      City: {{order.addressDto.city}}
+      Country: {{order.addressDto.country}}
+    </div>
+  </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+

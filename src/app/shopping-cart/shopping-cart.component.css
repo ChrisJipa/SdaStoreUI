@@ -1,0 +1,13 @@
+.product-card {
+
+  margin: 10px;
+}
+
+.product-img-wrapper {
+  max-width: 200px;
+  float:left;
+}
+
+.title-wrapper {
+  margin-left: 20%;
+}

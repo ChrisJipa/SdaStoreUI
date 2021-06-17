@@ -1,0 +1,30 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.top-toolbar-row {
+  justify-content: space-between;
+}
+
+.search-form-field {
+  min-width: 70%;
+  position: center;
+}
+
+.material-icons {
+  align-self: flex-end;
+}
+
+.bottom-toolbar-row {
+  justify-content: space-between;
+}
+
+.accounts-placeholder {
+  line-height: normal;
+  padding-right: 20px;
+}
+
+.orders-placeholder {
+ line-height: normal;
+}
+

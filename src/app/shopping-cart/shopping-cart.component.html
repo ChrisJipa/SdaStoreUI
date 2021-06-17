@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div *ngIf="products.length > 0">
+<mat-card class="product-card" *ngFor="let product of products">
+  <div class="img-wrapper">
+    <img mat-card-image class="product-img-wrapper"
+         src="https://media.telekom.ro/images/lp/tv-net-voce/tv_banner.png"/>
+  </div>
+  <div class="title-wrapper">
+    <mat-card-title class="product-title">{{product.name}}</mat-card-title>
+    <mat-card-subtitle class="product-description">Product Description:</mat-card-subtitle>
+    <p class="description">
+      {{product.description}}
+    </p>
+    <div class="quantity-selector">
+      <mat-select (selectionChange)="changeQuantity($event, product.id)" name="quantity-selector">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+      </mat-select>
+      <label style="font-weight: bolder"> buc.</label>
+    </div>
+    <div class="price-wrapper">
+      <mat-card-subtitle class="product-price">
+        {{product.price}}
+      </mat-card-subtitle>
+    </div>
+  </div>
+</mat-card>
+
+<button (click)="makeOrder()">
+  Create order
+</button>
+</div>
+<div *ngIf="products.length === 0"> Add some items into the cart! </div>

@@ -1,0 +1,62 @@
+<mat-toolbar>
+
+  <mat-toolbar-row class="top-toolbar-row">
+    <p>SDA Store</p>
+    <mat-form-field class="search-form-field">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="" value="" (keyup)="searchProduct($event)" type="text">
+    </mat-form-field>
+
+    <span *ngIf="!loggedUser">
+    <button mat-icon-button [routerLink]="['/login']">
+      <div class="accounts-placeholder">
+        <p>Sign in or <br>
+          <b>Register</b></p>
+      </div>
+    </button>
+    <span></span>
+    </span>
+
+    <span *ngIf="loggedUser">
+    <button mat-icon-button [routerLink]="['/login']">
+      <div class="accounts-placeholder">
+        <p>Hello,<span>  </span><br>
+          <b>Accounts & Lists</b></p>
+      </div>
+    </button>
+    <span></span>
+    </span>
+    <button mat-icon-button [routerLink]="['/my-orders']">
+      <div class="orders-placeholder">
+        <p>Returns<br>
+          <b>& Orders</b></p>
+      </div>
+    </button>
+
+    <a mat-button [routerLink]="['/shopping-cart']">
+      <mat-icon matBadge="{{numberOfProductsInCart}}" matBadgeColor="warn">
+        <span class="material-icons">
+         add_shopping_cart
+        </span>
+      </mat-icon>
+    </a>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="bottom-toolbar-row">
+    <button mat-icon-button [routerLink]="['/login']">Login</button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [routerLink]="['/my-orders']">My Orders</button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [routerLink]="['/register']">Register</button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [routerLink]="['/product']">Product page</button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [routerLink]="['/product-card-view']">Card view</button>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+
+</mat-toolbar>
