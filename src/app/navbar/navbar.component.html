@@ -8,15 +8,16 @@
     </mat-form-field>
 
     <span *ngIf="!loggedUser">
-    <button mat-icon-button [routerLink]="['/login']" [mat-menu-trigger-for]="">
+    <button mat-icon-button [routerLink]="['/login']" [mat-menu-trigger-for]="menu">
       <div class="accounts-placeholder">
         <p>Sign in or <br>
           <b>Register</b></p>
       </div>
     </button>
-      <button mat-menu-item>
-        <span>Redial</span>
-      </button>
+      <mat-menu #menu>
+      <button mat-menu-item>Menu item 1</button>
+        <button mat-menu-item>Menu item 1</button>
+        </mat-menu>
     <span></span>
     </span>
 
