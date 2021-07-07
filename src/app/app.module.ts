@@ -34,6 +34,7 @@ import { CustomerOrderPageComponent } from './customer-order-page/customer-order
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import { MyAccountComponent } from './my-account/my-account.component';
+import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,8 @@ import { MyAccountComponent } from './my-account/my-account.component';
     MatBadgeModule,
     MatExpansionModule,
     MatListModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule,
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
